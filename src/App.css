@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hov-header-card{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 28px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-me:hover .hov-header-card{
+    background-color: rgba(0, 0, 0, .4);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 30px;
+	width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.progress-done {
+	background: linear-gradient(to left, #F2709C, #FF9472);
+	box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+	border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	animation: slideUp 1.4s ease;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	animation: slideUp 1.4s ease;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+}
+
+.no_scroll::-webkit-scrollbar{
+	display: none;
+}
+
+.notifikasi-before::before{
+  content: "";
+  position: absolute;
+  border: 15px solid;
+  top: -30px;
+  right: 10px;
+  /* background-color: aqua; */
+  border-color: transparent transparent white transparent;
+  transform: translateX(-50%);  
+}
+
+@keyframes slideUp {
+	0%{
+		transform: translateY(1000px);
+	}
+	100%{
+		transform: translateY(0);
+	}
 }
